@@ -1,7 +1,10 @@
 package com.example.listviewcustomizedv1.ui
 
 
+import android.content.Context
+import android.widget.Toast
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
@@ -12,17 +15,24 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import com.example.listviewcustomizedv1.model.data.Plant
 
+fun cardViewCallBack(context: Context, name: String) {
+    Toast.makeText(context,"Hello ${name}",Toast.LENGTH_LONG).show()
+}
 
 @Composable
 fun PlantCard(name:String,description:String,image:Int)
 {
+    var context= LocalContext.current
     Card(
         modifier = Modifier
             .padding(10.dp)
             .fillMaxWidth()
-            .wrapContentHeight(),
+            .wrapContentHeight().
+            clickable { cardViewCallBack(context,name+description) },
         shape = MaterialTheme.shapes.medium,
         elevation = 5.dp,
         backgroundColor = MaterialTheme.colors.surface
@@ -43,14 +53,14 @@ fun PlantCard(name:String,description:String,image:Int)
             Column(Modifier.padding(8.dp)) {
 
                 Text(text = name,
-                    style=MaterialTheme.typography.h2,
+                    style=MaterialTheme.typography.h6,
                     color=MaterialTheme.colors.onSurface,
-                    modifier=Modifier.padding(bottom=8.dp)
+                    modifier=Modifier.padding(start=30.dp)
                 )
                 Text(text = description,
-                    style=MaterialTheme.typography.body2,
+                    style=MaterialTheme.typography.body1,
                     color=MaterialTheme.colors.onSurface,
-                    modifier=Modifier.padding(bottom=4.dp)
+                    modifier=Modifier.padding(start=15.dp)
                 )
 
             }
