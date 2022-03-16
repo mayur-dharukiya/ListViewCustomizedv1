@@ -1,4 +1,4 @@
-package com.example.listviewcustomizedv1
+package com.example.listviewcustomizedv1.model.data
 
 data class Plant(
     val id:Int,

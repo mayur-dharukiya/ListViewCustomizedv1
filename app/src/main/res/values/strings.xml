@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ListViewCustomizedv1</string>
+    <string name="title">Plants in Cosmetics</string>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.example.listviewcustomizedv1
+package com.example.listviewcustomizedv1.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.listviewcustomizedv1.ui.theme.ListViewCustomizedv1Theme
+import com.example.listviewcustomizedv1.ui.theme.plants
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,22 +23,12 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
+                         AllPlants(plants)
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    ListViewCustomizedv1Theme {
-        Greeting("Android")
-    }
-}
+
